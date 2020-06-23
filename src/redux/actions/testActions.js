@@ -13,3 +13,17 @@ export const delItem = (index) => {
         payload: index
     }
 }
+
+export const addCount = (val) => {
+    return {
+        type: 'ADD_COUNT',
+        payload: val
+    }
+}
+
+export const delCount = (val) => {
+    return {
+        type: 'DEL_COUNT',
+        payload: val
+    }
+}

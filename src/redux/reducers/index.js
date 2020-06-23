@@ -1,8 +1,9 @@
 const initalState = {
     fluxState: [{
-        name: 'item title',
+        name: 'walk the dog',
         description: 'description'
-    }]
+    }],
+    count: 0
 }
 function testReducer(state = initalState, action) {
     switch (action.type) {
@@ -16,6 +17,10 @@ function testReducer(state = initalState, action) {
                 } return false
             })
             return { ...state, fluxState: remainingItems }
+        case 'ADD_COUNT':
+            return { ...state, count: state.count + action.payload }
+        case 'DEL_COUNT':
+            return { ...state, count: state.count - action.payload }
         default:
             return state;
     }
